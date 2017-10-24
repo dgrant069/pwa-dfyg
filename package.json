@@ -15,6 +15,9 @@
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-navigation": "^1.0.0-beta.15",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
     "redux": "^3.7.2",
     "rxjs": "^5.4.3"
   },
@@ -43,6 +46,7 @@
     "precss": "^2.0.0",
     "react-scripts": "^1.0.14",
     "redux-logger": "^3.0.6",
+    "remote-redux-devtools": "^0.5.12",
     "style-loader": "^0.19.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",

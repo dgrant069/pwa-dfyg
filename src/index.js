@@ -1,5 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+
+import AppRouter from './router'
+import { AppNavigator } from './config/routes';
+import configureStore from './data/store';
 
 export const initializeServiceWorker = () => {
   return navigator.serviceWorker ? registerServiceWorker(navigator.serviceWorker) : gracefulFallback(navigator)
@@ -16,24 +21,13 @@ const gracefulFallback = (navigator) => {
   return console.warn("Browser does't support ServiceWorker; navigator: %o", navigator)
 }
 
-initializeServiceWorker()
+// initializeServiceWorker()
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Service Workers in React?</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const store = configureStore();
 
 render(
-  <App />,
+  <Provider store={ store }>
+    <AppRouter />
+  </Provider>,
   document.getElementById('root')
 )
