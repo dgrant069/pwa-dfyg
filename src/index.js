@@ -23,7 +23,7 @@ const gracefulFallback = (navigator) => {
 // initializeServiceWorker()
 
 const store = configureStore()
-console.log('store', store)
+
 render(
   <Provider store={ store }>
     <Router />
