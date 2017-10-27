@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 
 import { history } from './config/history'
-import MainLayout from './views/MainLayout'
-import HomeScreen from './views/HomeScreen'
+import MainLayout from './views/mainLayout/mainLayout'
+import HomeScreen from './views/homeScreen/homeScreen'
 import AltScreen from './views/AltScreen'
 import TestScreen from './views/TestScreen'
 

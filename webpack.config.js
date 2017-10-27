@@ -85,7 +85,7 @@ module.exports = {
   plugins: [
     new CopyWebpackPlugin([{
       from: path.resolve(__dirname, 'src/config'),
-      to: path.resolve(__dirname, 'dist')
+      to: path.resolve(__dirname, 'dist'),
     }]),
 
     new HtmlWebpackPlugin({
