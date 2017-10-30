@@ -1,13 +1,15 @@
 import React from 'react'
+import Header from '../../components/header/header'
+import Footer from '../../components/footer/footer'
 
-const MainLayout = ({ children, location }) => {
+const MainLayout = ({ children }) => {
   return (
     <div className="app-main">
-      <header><h1>WELCOME</h1></header>
+      <Header />
       <main className="main">
           { children }
       </main>
-      <footer><h2>GOODBYE</h2></footer>
+      <Footer />
     </div>
   )
 }
