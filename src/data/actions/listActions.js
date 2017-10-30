@@ -16,14 +16,12 @@ const seeds = Observable.fromPromise(
 const mapSeeds = () =>
   seeds.map(
     (data) => {
-      console.log('success response', data)
       return {
         type: types.FECTH_LIST_SUCCESS,
         response: data
       }
     },
     (error) => {
-      console.log('error response', error)
       return {
         type: 'FECTH_LIST_ERROR',
         error
