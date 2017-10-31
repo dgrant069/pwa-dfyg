@@ -5,7 +5,7 @@
 const doCache = false
 const CACHE_NAME = 'PWA_DFYG'
 const urlsToCache = [
-  '/dist/',
+  '/',
   'main.bundle.js',
   'manifest.json',
 ]

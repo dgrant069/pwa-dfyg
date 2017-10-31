@@ -1,8 +1,9 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
+const webpack= require('webpack')
+
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const webpack= require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -14,9 +15,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
   },
-
-  // This tells Webpack to create source map files.
-  devtool: 'eval-source-map',
 
   module: {
     rules: [
@@ -66,14 +64,6 @@ module.exports = {
     ]
   },
 
-  // Config for Webpack Dev Server
-  devServer: {
-    contentBase: path.resolve(__dirname, "devServer"),
-    inline: true,
-    port: 4000,
-    historyApiFallback: true
-  },
-
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
   },
@@ -83,10 +73,16 @@ module.exports = {
   },
 
   plugins: [
-    new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, 'src/config'),
-      to: path.resolve(__dirname, 'dist'),
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'src/config'),
+        to: path.resolve(__dirname, 'dist'),
+      },
+      {
+        from: path.resolve(__dirname, 'assets'),
+        to: path.resolve(__dirname, 'dist/images'),
+      }
+    ]),
 
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.ejs')
