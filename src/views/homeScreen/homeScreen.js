@@ -3,21 +3,21 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import * as types from '../../data/actions/constants'
-import { fetchList } from '../../data/actions/listActions'
-import List from '../../components/list/list'
+import { fetchGiftsList } from '../../data/actions/giftsActions'
+import GiftsList from '../../components/giftsList/giftsList'
 
 const Home = (props) => {
   console.log('home - props', props)
 
   const handleClick = (e) => {
-    return props.dispatch(fetchList())
+    return props.dispatch(fetchGiftsList())
   }
 
-  props.dispatch(fetchList())
+  props.dispatch(fetchGiftsList())
 
   return (
     <div className="App">
-      <List list={props.list}/>
+      <GiftsList giftsList={props.giftsList}/>
       <button onClick={(e) => handleClick(e)}>Add</button>
       <Link to='/alt'>alt</Link>
     </div>
@@ -26,12 +26,12 @@ const Home = (props) => {
 
 Home.propTypes = {
   // dispatch: PropTypes.func,
-  // list: PropTypes.array,
+  // gift: PropTypes.array,
 }
 
 const mapStateToProps = state => {
   return {
-    list: state.listReducer.list,
+    giftsList: state.giftsReducer.giftsList,
   }
 }
 

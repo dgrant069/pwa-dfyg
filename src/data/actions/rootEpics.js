@@ -1,8 +1,8 @@
 import { combineEpics } from 'redux-observable'
-import { fetchListEpic } from './listActions'
+import { fetchGiftsListEpic } from './giftsActions'
 
 const rootEpic = combineEpics(
-  fetchListEpic,
+  fetchGiftsListEpic,
 )
 
 export default rootEpic
